@@ -6,7 +6,9 @@
     style="--bs-bg-opacity: 0.3"
   >
     <div class="container-fluid">
-      <a class="navbar-brand" href="/">가로주택 정비사업</a>
+      <a class="navbar-brand" @click="$router.push({ name: 'Home' })" href="#"
+        >가로주택 정비사업</a
+      >
       <button
         class="navbar-toggler"
         type="button"
@@ -21,7 +23,11 @@
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav me-auto mb-2 mb-md-0">
           <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="/information.html"
+            <a
+              class="nav-link"
+              aria-current="page"
+              href="#"
+              @click="$router.push({ name: 'Information' })"
               ><i class="bi bi-building"></i>관련정보</a
             >
           </li>
@@ -46,7 +52,7 @@
         </ul>
         <div class="col-md-3 text-end">
           <a
-            class="btn btn-success"
+            class="btn btn-success mx-2"
             type="submit"
             data-bs-toggle="modal"
             data-bs-target="#exampleModal"

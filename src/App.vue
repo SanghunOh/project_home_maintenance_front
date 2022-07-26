@@ -8,9 +8,7 @@ import Modals from "./components/Modals.vue";
 
 <template>
   <!-- header -->
-  <template>
-    <head-menus></head-menus>
-  </template>
+  <HeadMenus></HeadMenus>
   <!-- Modal -->
   <Modals></Modals>
   <!-- Start contents -->
@@ -24,9 +22,7 @@ import Modals from "./components/Modals.vue";
 
   <!-- https://getbootstrap.com/docs/5.1/examples/blog/# -->
   <!-- footer -->
-  <template>
-    <footers></footers>
-  </template>
+  <footers></footers>
 </template>
 
 <style></style>

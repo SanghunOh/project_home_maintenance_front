@@ -7,7 +7,7 @@ export default ({ mode }) => {
 
   return defineConfig({
     plugins: [vue()],
-    base: process.env.VITE_BASE_PATH, // for build
+    // base: process.env.VITE_BASE_PATH, // for build
     build: {
       outDir: "docs",
       emptyOutDir: true,

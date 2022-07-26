@@ -1,6 +1,6 @@
 import { defineComponent } from "vue";
 
-const base_path = "/project_home_maintenance_front";
+const base_path = "";
 // lazy load components for better performance
 const Main = () => {
   return import("../components/Main.vue");
@@ -18,7 +18,7 @@ const routes = [
     name: "NotFound",
     component: NotFound,
   },
-  { path: base_path + "/", redirect: "/main" },
+  { path: base_path + "/", redirect: "/main", name: "Home" },
   {
     path: base_path + "/main",
     component: Main,
