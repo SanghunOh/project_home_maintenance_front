@@ -6,6 +6,7 @@ import Footers from "./components/Footers.vue";
 import Modals from "./components/Modals.vue";
 </script>
 
+<!-- https://getbootstrap.com/docs/5.1/examples/blog/# -->
 <template>
   <!-- header -->
   <HeadMenus></HeadMenus>
@@ -20,7 +21,6 @@ import Modals from "./components/Modals.vue";
 
   <!-- End contents -->
 
-  <!-- https://getbootstrap.com/docs/5.1/examples/blog/# -->
   <!-- footer -->
   <footers></footers>
 </template>
