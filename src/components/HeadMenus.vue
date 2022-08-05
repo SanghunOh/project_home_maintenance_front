@@ -50,7 +50,8 @@
             >
           </li>
         </ul>
-        <div class="col-md-3 text-end">
+        <!-- within Model -->
+        <!-- <div class="col-md-3 text-end">
           <a
             class="btn btn-success mx-2"
             type="submit"
@@ -63,6 +64,21 @@
             type="submit"
             data-bs-toggle="modal"
             data-bs-target="#exampleModal"
+            >가입하기</a
+          >
+        </div> -->
+        <!-- without Model -->
+        <div class="col-md-3 text-end">
+          <a
+            class="btn btn-success mx-2"
+            href="#"
+            @click="$router.push({ name: 'UserLogin' })"
+            >로그인</a
+          >
+          <a
+            class="btn btn-outline-success"
+            href="#"
+            @click="$router.push({ name: 'UserRegister' })"
             >가입하기</a
           >
         </div>
