@@ -6,9 +6,12 @@
     style="--bs-bg-opacity: 0.3"
   >
     <div class="container-fluid">
-      <a class="navbar-brand" @click="$router.push({ name: 'Home' })" href="#"
-        >가로주택 정비사업</a
+      <button
+        class="btn btn-link navbar-brand"
+        @click="$router.push({ name: 'Home' })"
       >
+        가로주택 정비사업
+      </button>
       <button
         class="navbar-toggler"
         type="button"
@@ -23,64 +26,73 @@
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav me-auto mb-2 mb-md-0">
           <li class="nav-item">
-            <a
-              class="nav-link"
+            <button
+              class="btn btn-link nav-link"
               aria-current="page"
-              href="#"
               @click="$router.push({ name: 'Information' })"
-              ><i class="bi bi-building"></i>관련정보</a
             >
+              <i class="bi bi-building"></i>관련정보
+            </button>
           </li>
           <li class="nav-item">
-            <a
-              class="nav-link"
-              href="#"
-              data-bs-toggle="modal"
-              data-bs-target="#exampleModal"
-              ><i class="bi-calculator-fill"></i>예상분담금</a
+            <button
+              class="btn btn-link nav-link"
+              aria-current="page"
+              @click="$router.push({ name: 'UnionActivity' })"
             >
+              <i class="bi bi-building"></i>조합 활동
+            </button>
           </li>
           <li class="nav-item">
-            <a
-              class="nav-link"
-              href="#"
+            <button
+              class="btn btn-link nav-link"
               data-bs-toggle="modal"
               data-bs-target="#exampleModal"
-              ><i class="bi bi-calendar-event"></i>조합일정</a
             >
+              <i class="bi-calculator-fill"></i>예상분담금
+            </button>
+          </li>
+          <li class="nav-item">
+            <button
+              class="btn btn-link nav-link"
+              data-bs-toggle="modal"
+              data-bs-target="#exampleModal"
+            >
+              <i class="bi bi-calendar-event"></i>조합일정
+            </button>
           </li>
         </ul>
         <!-- within Model -->
         <!-- <div class="col-md-3 text-end">
-          <a
+          <button
             class="btn btn-success mx-2"
             type="submit"
             data-bs-toggle="modal"
             data-bs-target="#exampleModal"
-            >로그인</a
+            >로그인</button
           >
-          <a
+          <button
             class="btn btn-outline-success"
             type="submit"
             data-bs-toggle="modal"
             data-bs-target="#exampleModal"
-            >가입하기</a
+            >가입하기</button
           >
         </div> -->
         <!-- without Model -->
         <div class="col-md-3 text-end">
-          <a
+          <button
             class="btn btn-success mx-2"
-            href="#"
             @click="$router.push({ name: 'UserLogin' })"
-            >로그인</a
           >
-          <a
+            로그인
+          </button>
+          <button
             class="btn btn-outline-success"
-            href="#"
             @click="$router.push({ name: 'UserRegister' })"
-            >가입하기</a
           >
+            가입하기
+          </button>
         </div>
       </div>
     </div>

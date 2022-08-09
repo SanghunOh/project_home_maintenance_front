@@ -2,7 +2,7 @@
 
 <template>
   <div class="position-sticky" style="top: 2rem">
-    <h4 class="pb-1 border-bottom text-center">진행 상황</h4>
+    <h4 class="pb-1 text-center">진행 상황</h4>
     <div class="accordion" id="accordionExample">
       <div class="accordion-item">
         <h2 class="accordion-header" id="headingOne">
@@ -123,7 +123,7 @@
             aria-expanded="false"
             aria-controls="collapse5"
           >
-            조함원 분양신청
+            조합원 분양신청
           </button>
         </h2>
         <div

@@ -14,6 +14,9 @@ const UserLogin = () => {
 const UserRegister = () => {
   return import("../components/users/UserRegister.vue");
 };
+const UnionActivity = () => {
+  return import("../components/unions/UnionActivity.vue");
+};
 const NotFound = defineComponent({
   template: "<div>Not Found</div>",
 });
@@ -28,6 +31,11 @@ const routes = [
     path: base_path + "/main",
     component: Main,
     name: "Main",
+  },
+  {
+    path: base_path + "/UnionActivity",
+    component: UnionActivity,
+    name: "UnionActivity",
   },
   {
     path: base_path + "/information",
