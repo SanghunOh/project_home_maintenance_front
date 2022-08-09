@@ -10,7 +10,7 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-body">
-          <h7 class="text-danger">규정 정해지면 곧, 사용 가능.</h7>
+          <h6 class="text-danger">규정 정해지면 곧, 사용 가능.</h6>
         </div>
         <div class="modal-footer">
           <button
