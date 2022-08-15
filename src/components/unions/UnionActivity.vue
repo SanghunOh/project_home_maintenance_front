@@ -1,21 +1,59 @@
 <script setup>
-import { reactive, computed } from "vue";
+import { reactive, watch } from "vue";
 import UsedCosts from "./UsedCosts.vue";
 
 const states = reactive({
   contract_amount: 250000000, // 대출업체 계약액
-  used_loan_amount: 0, // 부담할 총액
 
-  loan_amount: 0, // 대출 총액
-  loan_per_month: 500000, // 월부담금
-  used_loan_months: 5, // 사용한 개월수
+  paid_loan_amount: 10400000, // 현재 사용 총액
   bundle_loans: 2500000, // 사전 대출 금액
 
-  marketing_amount: 0, // 마케팅 금액
-  marketing_peoples_per_month: 6, // 월별 마케팅 인원수
-  cost_people_per_day: 120000, // 인원당 일당 비용
-  used_people_days: 5, // 마케팅 일수
+  used_loan_amount: 5000000, // 사용하고 있는 총액
+  loan_per_month: 500000, // 월부담금
+  used_loan_months: 5, // 사용한 개월수
+
+  marketing_amount: 5400000, // 마케팅 금액
+  marketing_peoples_per_day: 3, // 일별 마케팅 인원수
+  marketing_people_cost_per_day: 120000, // 인원당 비용 (단위:일)
+  marketing_days: 15, // 마케팅 일한 날짜수
 });
+
+function usedLoanCalculation(newValue, oldValue) {
+  states.used_loan_amount = newValue.loan_per_month * newValue.used_loan_months;
+  states.paid_loan_amount = states.used_loan_amount + newValue.bundle_loans;
+}
+
+function usedMarketingCostCalculation(newValue, oldValue) {
+  states.marketing_amount =
+    newValue.marketing_peoples_per_day *
+    newValue.marketing_people_cost_per_day *
+    newValue.marketing_days;
+}
+watch(
+  () => {
+    return { ...states };
+  },
+  (newValue, oldValue) => {
+    console.log("new : ", newValue, "old : ", oldValue);
+    if (
+      newValue.used_loan_months !== oldValue.used_loan_months ||
+      newValue.loan_per_month !== oldValue.loan_per_month ||
+      newValue.bundle_loans !== oldValue.bundle_loans
+    ) {
+      usedLoanCalculation(newValue, oldValue);
+    }
+    if (
+      newValue.marketing_peoples_per_day !==
+        oldValue.marketing_peoples_per_day ||
+      newValue.marketing_people_cost_per_day !==
+        oldValue.marketing_people_cost_per_day ||
+      newValue.marketing_days !== oldValue.marketing_days
+    ) {
+      usedMarketingCostCalculation(newValue, oldValue);
+    }
+  },
+  { deep: true }
+);
 </script>
 
 <template>
@@ -29,7 +67,7 @@ const states = reactive({
         <div class="col p-4 d-flex flex-column position-static">
           <div class="card border-0">
             <h6>
-              대출 지급할 총액 :
+              업체 지급할 총액 :
               {{ states.contract_amount + states.marketing_amount }}
             </h6>
             <div>
@@ -39,11 +77,11 @@ const states = reactive({
             </div>
             <hr />
             <h6>
-              현재 사용 총액 :
-              {{ states.used_loan_amount + states.marketing_amount }}
+              현재 사용한 총액 :
+              {{ states.paid_loan_amount + states.marketing_amount }}
             </h6>
             <div>
-              사용액({{ states.used_loan_amount }}) + 홈보비({{
+              사용액({{ states.paid_loan_amount }}) + 홈보비({{
                 states.marketing_amount
               }})
             </div>
@@ -57,15 +95,17 @@ const states = reactive({
         <div class="col p-4 d-flex flex-column position-static">
           <div class="card border-0">
             <div class="row g-3">
-              <h6>대출 내역 계산 : {{ states.loan_amount }}</h6>
+              <h6>대출 내역 계산 : {{ states.paid_loan_amount }}</h6>
               <div class="col-sm-6">
-                <label for="loan_per_month" class="form-label">월부담금</label>
+                <label for="loan_per_month" class="form-label"
+                  >월별 부담금</label
+                >
                 <input
                   type="text"
                   class="form-control"
                   id="loan_per_month"
                   placeholder=""
-                  :value="states.loan_per_month"
+                  v-model="states.loan_per_month"
                   required=""
                 />
                 <div class="invalid-feedback">Valid 월부담금 is required.</div>
@@ -79,7 +119,7 @@ const states = reactive({
                   class="form-control"
                   id="used_loan_months"
                   placeholder=""
-                  :value="states.used_loan_months"
+                  v-model="states.used_loan_months"
                   required=""
                 />
                 <div class="invalid-feedback">
@@ -98,7 +138,7 @@ const states = reactive({
                     id="bundle_loans"
                     placeholder="사전 대출 금액"
                     required=""
-                    :value="states.bundle_loans"
+                    v-model="states.bundle_loans"
                   />
                   <div class="invalid-feedback">
                     Your 사전 대출 금액 is required.
@@ -106,48 +146,54 @@ const states = reactive({
                 </div>
               </div>
               <hr class="mt-3" />
-              <h6>홍보 내역 계산 : {{ marketing_amount }}</h6>
+              <h6>홍보 내역 계산 : {{ states.marketing_amount }}</h6>
               <div class="col-sm-6">
-                <label for="cost_people_per_day" class="form-label"
-                  >일당 비용</label
+                <label for="marketing_people_cost_per_day" class="form-label"
+                  >비용 (단위:일)</label
                 >
                 <input
                   type="text"
                   class="form-control"
-                  id="cost_people_per_day"
+                  id="marketing_people_cost_per_day"
                   placeholder=""
-                  :value="states.cost_people_per_day"
-                  required=""
-                />
-                <div class="invalid-feedback">Valid 일당 비용 is required.</div>
-              </div>
-              <div class="col-sm-3">
-                <label for="marketing_peoples_per_month" class="form-label"
-                  >월별 인원수</label
-                >
-                <input
-                  type="text"
-                  class="form-control"
-                  id="marketing_peoples_per_month"
-                  placeholder=""
-                  :value="states.marketing_peoples_per_month"
+                  v-model="states.marketing_people_cost_per_day"
                   required=""
                 />
                 <div class="invalid-feedback">
-                  Valid 월별 인원수 is required.
+                  Valid 비용 (단위:일) is required.
                 </div>
               </div>
               <div class="col-sm-3">
-                <label for="used_people_days" class="form-label">일수</label>
+                <label for="marketing_days" class="form-label"
+                  >일한 날짜수</label
+                >
                 <input
                   type="text"
                   class="form-control"
-                  id="used_people_days"
+                  id="marketing_days"
                   placeholder=""
-                  :value="states.used_people_days"
+                  v-model="states.marketing_days"
                   required=""
                 />
-                <div class="invalid-feedback">Valid 일수 is required.</div>
+                <div class="invalid-feedback">
+                  Valid 일한 날짜수 is required.
+                </div>
+              </div>
+              <div class="col-sm-3">
+                <label for="marketing_peoples_per_day" class="form-label"
+                  >일별 인원수</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="marketing_peoples_per_day"
+                  placeholder=""
+                  v-model="states.marketing_peoples_per_day"
+                  required=""
+                />
+                <div class="invalid-feedback">
+                  Valid 일별 인원수 is required.
+                </div>
               </div>
             </div>
           </div>
