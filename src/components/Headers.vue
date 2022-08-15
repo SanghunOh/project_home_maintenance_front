@@ -63,23 +63,25 @@
           </li>
         </ul>
         <!-- within Model -->
-        <!-- <div class="col-md-3 text-end">
+        <div class="col-md-3 text-end">
           <button
             class="btn btn-success mx-2"
             type="submit"
             data-bs-toggle="modal"
             data-bs-target="#exampleModal"
-            >로그인</button
           >
+            로그인
+          </button>
           <button
             class="btn btn-outline-success"
             type="submit"
             data-bs-toggle="modal"
             data-bs-target="#exampleModal"
-            >가입하기</button
           >
-        </div> -->
-        <!-- without Model -->
+            가입하기
+          </button>
+        </div>
+        <!-- without Model 
         <div class="col-md-3 text-end">
           <button
             class="btn btn-success mx-2"
@@ -93,7 +95,7 @@
           >
             가입하기
           </button>
-        </div>
+        </div>-->
       </div>
     </div>
   </nav>
