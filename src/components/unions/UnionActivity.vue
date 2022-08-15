@@ -1,5 +1,5 @@
 <script setup>
-import { reactive, watch } from "vue";
+import { computed, reactive, watch } from "vue";
 import UsedCosts from "./UsedCosts.vue";
 
 const states = reactive({
@@ -13,7 +13,7 @@ const states = reactive({
   used_loan_months: 5, // 사용한 개월수
 
   marketing_amount: 5400000, // 마케팅 금액
-  marketing_peoples_per_day: 3, // 일별 마케팅 인원수
+  marketing_peoples_per_day: 1, // 일별 마케팅 인원수
   marketing_people_cost_per_day: 120000, // 인원당 비용 (단위:일)
   marketing_days: 15, // 마케팅 일한 날짜수
 });
@@ -54,6 +54,11 @@ watch(
   },
   { deep: true }
 );
+
+// const numberWithComma = computed({
+//     get: () => store.state.page.about.title,
+//     set: value => store.commit('setData', { about: { title: value }})
+// })
 </script>
 
 <template>
@@ -68,22 +73,28 @@ watch(
           <div class="card border-0">
             <h6>
               업체 지급할 총액 :
-              {{ states.contract_amount + states.marketing_amount }}
+              {{
+                Number(
+                  states.contract_amount + states.marketing_amount
+                ).toLocaleString()
+              }}
             </h6>
             <div>
-              계약 대출금({{ states.contract_amount }}) + 홈보비({{
-                states.marketing_amount
-              }})
+              계약 대출금({{ Number(states.contract_amount).toLocaleString() }})
+              + 홈보비({{ Number(states.marketing_amount).toLocaleString() }})
             </div>
             <hr />
             <h6>
               현재 사용한 총액 :
-              {{ states.paid_loan_amount + states.marketing_amount }}
+              {{
+                Number(
+                  states.paid_loan_amount + states.marketing_amount
+                ).toLocaleString()
+              }}
             </h6>
             <div>
-              사용액({{ states.paid_loan_amount }}) + 홈보비({{
-                states.marketing_amount
-              }})
+              사용액({{ Number(states.paid_loan_amount).toLocaleString() }}) +
+              홈보비({{ Number(states.marketing_amount).toLocaleString() }})
             </div>
           </div>
         </div>
@@ -95,7 +106,10 @@ watch(
         <div class="col p-4 d-flex flex-column position-static">
           <div class="card border-0">
             <div class="row g-3">
-              <h6>대출 내역 계산 : {{ states.paid_loan_amount }}</h6>
+              <h6>
+                대출 내역 계산 :
+                {{ Number(states.paid_loan_amount).toLocaleString() }}
+              </h6>
               <div class="col-sm-6">
                 <label for="loan_per_month" class="form-label"
                   >월별 부담금</label
@@ -146,7 +160,10 @@ watch(
                 </div>
               </div>
               <hr class="mt-3" />
-              <h6>홍보 내역 계산 : {{ states.marketing_amount }}</h6>
+              <h6>
+                홍보 내역 계산 :
+                {{ Number(states.marketing_amount).toLocaleString() }}
+              </h6>
               <div class="col-sm-6">
                 <label for="marketing_people_cost_per_day" class="form-label"
                   >비용 (단위:일)</label

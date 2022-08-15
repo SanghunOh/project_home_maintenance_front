@@ -29,13 +29,6 @@
     </li>
     <li class="list-group-item d-flex justify-content-between lh-sm">
       <div>
-        <h6 class="my-0">홍보 요원 활동비</h6>
-        <small class="text-muted">2022년7월분</small>
-      </div>
-      <span class="text-muted">3,600,000</span>
-    </li>
-    <li class="list-group-item d-flex justify-content-between lh-sm">
-      <div>
         <h6 class="my-0">사무실 사용료</h6>
         <small class="text-muted">2022년6월분</small>
       </div>
@@ -54,6 +47,41 @@
         <small class="text-muted">2022년5월분</small>
       </div>
       <span class="text-muted">500,000</span>
+    </li>
+    <li class="list-group-item d-flex justify-content-between lh-sm">
+      <div>
+        <h6 class="my-0">사무실 사용료</h6>
+        <small class="text-muted">2022년4월분</small>
+      </div>
+      <span class="text-muted">500,000</span>
+    </li>
+    <li class="list-group-item d-flex justify-content-between lh-sm">
+      <div>
+        <h6 class="my-0">홍보 요원 활동비</h6>
+        <small class="text-muted">2022년4월분</small>
+      </div>
+      <span class="text-muted">3,600,000</span>
+    </li>
+    <li class="list-group-item d-flex justify-content-between lh-sm">
+      <div>
+        <h6 class="my-0">사무실 사용료</h6>
+        <small class="text-muted">2022년3월분</small>
+      </div>
+      <span class="text-muted">500,000</span>
+    </li>
+    <li class="list-group-item d-flex justify-content-between lh-sm">
+      <div>
+        <h6 class="my-0">사무실 보증금</h6>
+        <small class="text-muted">보증금</small>
+      </div>
+      <span class="text-muted">2,500,000</span>
+    </li>
+    <li class="list-group-item d-flex justify-content-between lh-sm">
+      <div>
+        <h6 class="my-0">홍보 요원 활동비</h6>
+        <small class="text-muted">2022년3월분</small>
+      </div>
+      <span class="text-muted">3,600,000</span>
     </li>
   </ul>
 </template>
