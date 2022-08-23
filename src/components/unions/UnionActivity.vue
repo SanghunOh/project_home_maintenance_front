@@ -81,7 +81,7 @@ watch(
             </h6>
             <div>
               계약 대출금({{ Number(states.contract_amount).toLocaleString() }})
-              + 홈보비({{ Number(states.marketing_amount).toLocaleString() }})
+              + 홍보비({{ Number(states.marketing_amount).toLocaleString() }})
             </div>
             <hr />
             <h6>
@@ -94,7 +94,7 @@ watch(
             </h6>
             <div>
               사용액({{ Number(states.paid_loan_amount).toLocaleString() }}) +
-              홈보비({{ Number(states.marketing_amount).toLocaleString() }})
+              홍보비({{ Number(states.marketing_amount).toLocaleString() }})
             </div>
           </div>
         </div>
