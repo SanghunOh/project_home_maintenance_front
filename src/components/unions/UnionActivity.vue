@@ -115,7 +115,7 @@ watch(
                   >월별 부담금</label
                 >
                 <input
-                  type="text"
+                  type="number"
                   class="form-control"
                   id="loan_per_month"
                   placeholder=""
@@ -129,7 +129,7 @@ watch(
                   >사용한 개월수</label
                 >
                 <input
-                  type="text"
+                  type="number"
                   class="form-control"
                   id="used_loan_months"
                   placeholder=""
@@ -147,7 +147,7 @@ watch(
                 <div class="input-group has-validation">
                   <span class="input-group-text">사무실 보증금</span>
                   <input
-                    type="text"
+                    type="number"
                     class="form-control"
                     id="bundle_loans"
                     placeholder="사전 대출 금액"
@@ -169,7 +169,7 @@ watch(
                   >비용 (단위:일)</label
                 >
                 <input
-                  type="text"
+                  type="number"
                   class="form-control"
                   id="marketing_people_cost_per_day"
                   placeholder=""
@@ -185,7 +185,7 @@ watch(
                   >일한 날짜수</label
                 >
                 <input
-                  type="text"
+                  type="number"
                   class="form-control"
                   id="marketing_days"
                   placeholder=""
@@ -201,7 +201,7 @@ watch(
                   >일별 인원수</label
                 >
                 <input
-                  type="text"
+                  type="number"
                   class="form-control"
                   id="marketing_peoples_per_day"
                   placeholder=""
