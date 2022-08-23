@@ -41,7 +41,7 @@
             aria-expanded="false"
             aria-controls="collapseTwo"
           >
-            조합설립 인가
+            조합설립 인가(2023.01)
           </button>
         </h2>
         <div
@@ -67,7 +67,7 @@
             aria-expanded="false"
             aria-controls="collapseThree"
           >
-            시공사 선정
+            시공사 선정(2023.08)
           </button>
         </h2>
         <div
@@ -94,7 +94,7 @@
             aria-expanded="false"
             aria-controls="collapse4"
           >
-            건축심의
+            건축심의(2024.02)
           </button>
         </h2>
         <div
@@ -123,7 +123,7 @@
             aria-expanded="false"
             aria-controls="collapse5"
           >
-            조합원 분양신청
+            조합원 분양신청(2024.11)
           </button>
         </h2>
         <div
@@ -176,7 +176,7 @@
             aria-expanded="false"
             aria-controls="collapse7"
           >
-            사업시행계획 인가
+            사업시행계획 인가(2024.11)
           </button>
         </h2>
         <div
@@ -229,7 +229,7 @@
             aria-expanded="false"
             aria-controls="collapse9"
           >
-            착공, 준공 및 입주
+            착공, 준공 및 입주(2024.11~2027.03)
           </button>
         </h2>
         <div
