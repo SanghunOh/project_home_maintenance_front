@@ -1,11 +1,12 @@
 <template>
   <h4 class="mb-3">회원 인증</h4>
-  <form
+  <!-- <form
     class="needs-validation"
     novalidate=""
     action="http://127.0.0.1:8000/users/login/"
     method="POST"
-  >
+  > -->
+  <form class="needs-validation" novalidate="" v-on:submit.prevent="submitForm">
     <div class="row g-3">
       <div class="col-12">
         <label for="username" class="form-label">Username</label>
@@ -36,10 +37,28 @@
 
     <hr class="my-4" />
 
-    <button class="btn btn-primary" type="submit">로그인하기</button>
+    <button class="btn btn-primary">로그인하기</button>
   </form>
 </template>
 
-<script setup></script>
+<script setup>
+import axios from "axios";
+
+function submitForm() {
+  axios
+    .post("http://127.0.0.1:8000/users/login/", this.form)
+    .then((res) => {
+      //Perform Success Action
+      console.log(res);
+    })
+    .catch((error) => {
+      // error.response.status Check status code
+      console.log(error.response.status);
+    })
+    .finally(() => {
+      //Perform action in always
+    });
+}
+</script>
 
 <style></style>

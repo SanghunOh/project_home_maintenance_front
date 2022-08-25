@@ -1,11 +1,12 @@
 <template>
   <h4 class="mb-3">회원 가입</h4>
-  <form
+  <!-- <form
     class="needs-validation"
     novalidate=""
     action="http://127.0.0.1:8000/users/register/"
     method="POST"
-  >
+  > -->
+  <form class="needs-validation" novalidate="" v-on:submit.prevent="submitForm">
     <div class="row g-3">
       <div class="col-12">
         <label for="username" class="form-label">Username</label>
@@ -68,10 +69,36 @@
 
     <hr class="my-4" />
 
-    <button class="btn btn-primary" type="submit">가입하기</button>
+    <button class="btn btn-primary">가입하기</button>
   </form>
 </template>
 
-<script setup></script>
+<script setup>
+import axios from "axios";
+import router from "../../routers/router.js";
+
+function submitForm(event) {
+  const formData = new FormData(event.target);
+  console.log({ ...formData });
+  // console.log(`router : ${router}`);
+  axios
+    .post("http://127.0.0.1:8000/users/register/", formData)
+    .then((res) => {
+      //Perform Success Action
+      // console.log(`res : ${res}`);
+      if (res.status == "201") {
+        router.replace({ name: "UserLogin" });
+      }
+    })
+    .catch((error) => {
+      // error.response.status Check status code
+      console.log(error);
+    })
+    .finally(() => {
+      //Perform action in always
+      console.log(`Perform action in always!`);
+    });
+}
+</script>
 
 <style></style>

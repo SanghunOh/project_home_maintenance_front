@@ -3,7 +3,7 @@
 <template>
   <nav
     class="navbar navbar-expand-md navbar-dark bg-primary mb-4"
-    style="--bs-bg-opacity: 0.3"
+    style="--bs-bg-opacity: 0.7"
   >
     <div class="container-fluid">
       <button
