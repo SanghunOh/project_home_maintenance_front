@@ -43,17 +43,24 @@
 
 <script setup>
 import axios from "axios";
+import router from "../../routers/router.js";
 
-function submitForm() {
+function submitForm(event) {
+  const formData = new FormData(event.target);
+
   axios
-    .post("http://127.0.0.1:8000/users/login/", this.form)
+    .post("http://127.0.0.1:8000/users/login/", formData)
     .then((res) => {
       //Perform Success Action
       console.log(res);
+      if (res.status == "200") {
+        console.log(`token : ${res.data.token}`);
+        // router.replace({ name: "Main" });
+      }
     })
     .catch((error) => {
       // error.response.status Check status code
-      console.log(error.response.status);
+      console.log(error);
     })
     .finally(() => {
       //Perform action in always
