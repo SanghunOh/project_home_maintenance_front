@@ -10,7 +10,7 @@
         class="btn btn-link navbar-brand"
         @click="$router.push({ name: 'Home' })"
       >
-        요주의 랩
+        가로주택 정비사업
       </button>
       <button
         class="navbar-toggler"
@@ -29,9 +29,36 @@
             <button
               class="btn btn-link nav-link"
               aria-current="page"
-              @click="$router.push({ name: 'FestivalList' })"
+              @click="$router.push({ name: 'Information' })"
             >
-              <i class="bi bi-building"></i>축제 정보
+              <i class="bi bi-building"></i>관련정보
+            </button>
+          </li>
+          <li class="nav-item">
+            <button
+              class="btn btn-link nav-link"
+              aria-current="page"
+              @click="$router.push({ name: 'UnionActivity' })"
+            >
+              <i class="bi bi-building"></i>조합 활동
+            </button>
+          </li>
+          <li class="nav-item">
+            <button
+              class="btn btn-link nav-link"
+              data-bs-toggle="modal"
+              data-bs-target="#exampleModal"
+            >
+              <i class="bi-calculator-fill"></i>예상분담금
+            </button>
+          </li>
+          <li class="nav-item">
+            <button
+              class="btn btn-link nav-link"
+              data-bs-toggle="modal"
+              data-bs-target="#exampleModal"
+            >
+              <i class="bi bi-calendar-event"></i>조합일정
             </button>
           </li>
         </ul>
