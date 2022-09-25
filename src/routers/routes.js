@@ -27,7 +27,7 @@ const routes = [
     name: "NotFound",
     component: NotFound,
   },
-  { path: base_path + "/", redirect: "/main", name: "Home" },
+  { path: base_path + "/", redirect: { name: "Main" }, name: "Home" },
   {
     path: base_path + "/main",
     component: Main,
