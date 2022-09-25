@@ -1,6 +1,6 @@
 import { defineComponent } from "vue";
 
-const base_path = "";
+const base_path = "/project_home_maintenance_front/";
 // lazy load components for better performance
 const Main = () => {
   return import("../components/Main.vue");
