@@ -4,6 +4,7 @@
 ## Program
 
 ```
-$ npm run dev
 $ npm install axios
+$ npm run dev
+$ npm run build
 ```

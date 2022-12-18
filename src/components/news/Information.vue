@@ -11,7 +11,7 @@
         <div class="col p-4 d-flex flex-column position-static">
           <div class="card bg-dark text-white">
             <img
-              src="../assets/infor_whatdifferent.png"
+              src="../../assets/infor_whatdifferent.png"
               class="card-img"
               alt="..."
             />
@@ -25,10 +25,10 @@
       <div class="position-sticky" style="top: 2rem">
         <h4 class="pb-1 border-bottom text-center">사례</h4>
         <div class="card bg-dark text-white">
-          <img src="../assets/case_01.png" class="card-img" alt="..." />
+          <img src="../../assets/case_01.png" class="card-img" alt="..." />
         </div>
         <div class="card bg-dark text-white">
-          <img src="../assets/case_02.png" class="card-img" alt="..." />
+          <img src="../../assets/case_02.png" class="card-img" alt="..." />
         </div>
       </div>
     </div>
