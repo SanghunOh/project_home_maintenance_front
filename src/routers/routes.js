@@ -6,7 +6,7 @@ const Main = () => {
   return import("../components/Main.vue");
 };
 const Information = () => {
-  return import("../components/Information.vue");
+  return import("../components/news/Information.vue");
 };
 const UserLogin = () => {
   return import("../components/users/UserLogin.vue");

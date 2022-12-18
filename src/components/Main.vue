@@ -1,5 +1,6 @@
 <script setup>
-import ProcessStates from "./ProcessStates.vue";
+import ProcessStates from "./process_states/ProcessStates.vue";
+import ConsentRateChart from "./ConsentRateChart";
 </script>
 
 <template>
@@ -25,17 +26,7 @@ import ProcessStates from "./ProcessStates.vue";
       >
         <div class="col p-4 d-flex flex-column position-static">
           <div class="card text-dark">
-            <canvas
-              id="myChart"
-              width="928"
-              height="928"
-              style="
-                display: block;
-                box-sizing: border-box;
-                height: 464px;
-                width: 464px;
-              "
-            ></canvas>
+            <ConsentRateChart />
           </div>
         </div>
       </div>
